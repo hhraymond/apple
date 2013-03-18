@@ -1,0 +1,65 @@
+huang_zhen@ubuntu:~/projects/GitHub$ ssh -v git@github.com
+OpenSSH_5.8p1 Debian-7ubuntu1, OpenSSL 1.0.0e 6 Sep 2011
+debug1: Reading configuration data /home/huang_zhen/.ssh/config
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: Applying options for *
+debug1: Connecting to github.com [207.97.227.239] port 22.
+debug1: Connection established.
+debug1: identity file /home/huang_zhen/.ssh/id_rsa type 1
+debug1: Checking blacklist file /usr/share/ssh/blacklist.RSA-2048
+debug1: Checking blacklist file /etc/ssh/blacklist.RSA-2048
+debug1: identity file /home/huang_zhen/.ssh/id_rsa-cert type -1
+debug1: identity file /home/huang_zhen/.ssh/id_dsa type -1
+debug1: identity file /home/huang_zhen/.ssh/id_dsa-cert type -1
+debug1: identity file /home/huang_zhen/.ssh/id_ecdsa type -1
+debug1: identity file /home/huang_zhen/.ssh/id_ecdsa-cert type -1
+debug1: Remote protocol version 2.0, remote software version OpenSSH_5.5p1 Debian-6+squeeze1+github8
+debug1: match: OpenSSH_5.5p1 Debian-6+squeeze1+github8 pat OpenSSH*
+debug1: Enabling compatibility mode for protocol 2.0
+debug1: Local version string SSH-2.0-OpenSSH_5.8p1 Debian-7ubuntu1
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: server->client aes128-ctr hmac-md5 none
+debug1: kex: client->server aes128-ctr hmac-md5 none
+debug1: SSH2_MSG_KEX_DH_GEX_REQUEST(1024<1024<8192) sent
+debug1: expecting SSH2_MSG_KEX_DH_GEX_GROUP
+debug1: SSH2_MSG_KEX_DH_GEX_INIT sent
+debug1: expecting SSH2_MSG_KEX_DH_GEX_REPLY
+debug1: Server host key: RSA 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48
+The authenticity of host 'github.com (207.97.227.239)' can't be established.
+RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added 'github.com,207.97.227.239' (RSA) to the list of known hosts.
+debug1: ssh_rsa_verify: signature correct
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: SSH2_MSG_NEWKEYS received
+debug1: Roaming not allowed by server
+debug1: SSH2_MSG_SERVICE_REQUEST sent
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey
+debug1: Next authentication method: publickey
+debug1: Offering RSA public key: /home/huang_zhen/.ssh/id_rsa
+debug1: Server accepts key: pkalg ssh-rsa blen 279
+debug1: Authentication succeeded (publickey).
+Authenticated to github.com ([207.97.227.239]:22).
+debug1: channel 0: new [client-session]
+debug1: Requesting no-more-sessions@openssh.com
+debug1: Entering interactive session.
+debug1: Remote: Forced command: gerve hhraymond 7c:55:03:90:88:9a:95:dc:24:f1:75:21:3e:88:52:f7
+debug1: Remote: Port forwarding disabled.
+debug1: Remote: X11 forwarding disabled.
+debug1: Remote: Agent forwarding disabled.
+debug1: Remote: Pty allocation disabled.
+debug1: Remote: Forced command: gerve hhraymond 7c:55:03:90:88:9a:95:dc:24:f1:75:21:3e:88:52:f7
+debug1: Remote: Port forwarding disabled.
+debug1: Remote: X11 forwarding disabled.
+debug1: Remote: Agent forwarding disabled.
+debug1: Remote: Pty allocation disabled.
+debug1: Sending environment.
+debug1: Sending env LC_MESSAGES = en_US.UTF-8
+debug1: Sending env LC_COLLATE = en_US.UTF-8
+debug1: Sending env LANG = zh_CN.UTF-8
+debug1: Sending env LC_CTYPE = en_US.UTF-8
+PTY allocation request failed on channel 0
+
