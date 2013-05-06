@@ -110,6 +110,10 @@ enum aaa{
     e_task02  = 2
 };
 
+#include <stdio.h>
+#include <ctype.h>
+#include <string.h>
+#include <stdlib.h>
 //*********** main  ************//
 int main(int argc, char *argv[])
 {
@@ -118,6 +122,29 @@ int main(int argc, char *argv[])
     int j = (int) (a - '0');
     std::cout << "i:" << i << std::endl;
     std::cout << "j:" << j << std::endl;
+
+    std::string str1 = "AAAbbbbCCCdddDD2";
+    
+    //char str[]="Test String.\n";
+    std::string str="Test String.\n";
+    str.replace(0, 5, "");
+    str.replace(str.length() -1 , 1, "");
+    std::cout << str.c_str() << "length: "<< str.length() << std::endl;
+
+    const char* ss="123 56";
+    std::cout << "ss lengthr " << strlen(ss) << std::endl;
+    
+    char c;
+    i = 0;
+    while (str[i])
+    {
+        c=str[i];
+        //std::cout << (tolower(c));
+        putchar (tolower(c));
+        i++;
+    } 
+
+    system ("ls > a");
 
     InsertionSortTest();
 
