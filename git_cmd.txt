@@ -1,0 +1,11 @@
+初始化：git init
+
+获取远端git库：git clone git@github.com:hhraymond/test.git git_test
+
+添加： git add
+
+提交：git commit
+
+拉取： git pull
+
+提交至远程：git push
