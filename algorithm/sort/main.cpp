@@ -144,6 +144,11 @@ int main(int argc, char *argv[])
         i++;
     } 
 
+    int n = 1;
+    for(int m = 0; m <= n; ++m ){
+        std::cout << "...\tm:" << m << std::endl;
+    }
+
     system ("ls > a");
 
     InsertionSortTest();

@@ -10,61 +10,61 @@ static int gCount = 0;
   
 void print()  
 {  
-    int outer;  
-    int inner;  
+    int row;  
+    int col;  
   
-    for(outer = 0; outer <8; outer ++){  
-        for(inner = 0; inner < gEightQueen[outer]; inner ++)  
+    for(row = 0; row <8; row ++){  
+        for(col = 0; col < gEightQueen[row]; col ++)  
             printf("* ");  
   
         printf("# ");  
   
-        for(inner = gEightQueen[outer] + 1; inner < 8; inner ++)  
+        for(col = gEightQueen[row] + 1; col < 8; col ++)  
             printf("* ");  
   
         printf("\n");  
     }  
   
-    printf("=====================================\n");  
+    printf("%d, =====================================\n", gCount);  
 }  
 
-int check_pos_valid(int loop, int value)  
+int check_pos_valid(int row, int col)  
 {  
     int index;  
     int data;  
   
-    for(index = 0; index < loop; index ++){  
+    for(index = 0; index < row; index ++){  
         data = gEightQueen[index];  
   
-        if(value == data)  
-            return 0;  
+        if(col == data)  
+            return false;  
   
-        if((index + data) == (loop + value))  
-            return 0;  
+        if((index + data) == (row + col))  
+            return false;  
   
-        if((index - data) == (loop - value))  
-            return 0;  
+        if((index - data) == (row - col))  
+            return false;  
     }  
   
-    return 1;  
+    return true;
 } 
 
-void eight_queen(int index)  
+void eight_queen(int row)  
 {  
-    int loop;  
+    int col;  
   
-    for(loop = 0; loop < 8; loop++){  
-        if(check_pos_valid(index, loop)){  
-            gEightQueen[index] = loop;  
+    for(col = 0; col < 8; col++){  
+        if(check_pos_valid(row, col)){  
+            gEightQueen[row] = col;  
   
-            if(7 == index){  
+            if(7 == row){  
                 gCount ++, print();  
-                gEightQueen[index] = 0;  
+                gEightQueen[row] = 0;  
                 return;  
             }  
               
-            eight_queen(index + 1);  
-            gEightQueen[index] = 0;  
+            eight_queen(row + 1);  
+            gEightQueen[row] = 0;  
         }  
     }  
 }
@@ -72,8 +72,8 @@ void eight_queen(int index)
 
 int main(int argc, char *argv[])
 {
-    int index = 0;
-    eight_queen(index);
+    int row = 0; // row
+    eight_queen(row);
 
     return 0;
 }
