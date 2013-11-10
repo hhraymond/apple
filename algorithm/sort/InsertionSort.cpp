@@ -14,7 +14,8 @@ template <typename Comparable>
 void InsertionSort( std::vector<Comparable> & a )
 {
     int j;
-
+    // 34, 8, 64, 51, 32, 21
+    // put a[p] into a sorted listed.
     for( int p = 1; p < a.size( ); p++ )
     {
         Comparable tmp = a[ p ];

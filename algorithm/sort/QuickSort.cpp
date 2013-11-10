@@ -18,7 +18,8 @@ using namespace std;
 template <typename Comparable>
 void QuickSort( vector<Comparable> & a )
 {
-    QuickSort( a, 0, a.size( ) - 1 );
+    //QuickSort( a, 0, a.size( ) - 1 );
+    QUICKSORT( a, 0, a.size() - 1);
 }
 
 /**
@@ -85,21 +86,40 @@ void QuickSort( std::vector<Comparable> & a, int left, int right )
 
 
 ///////////////////////////////////////////////////////////////
-// method 2 //
+// method 2  for simple //
 template <typename Comparable>
 int PARTITION( vector<Comparable> & R, int l, int h )
 {
-	int i, j;
+    int i, j;
     i = l; j = h;
 	Comparable tmp = R[i];
+    //do {
+    //    while( (R[j] >= tmp) && (i<j) ) j--;
+    //    if ( i < j ) R[i++] = R[j];
+    //    while( ( R[i] <= tmp) && (i<j) ) i++;
+    //    if ( i < j ) R[j--] = R[i];
+    //}while (i != j);
+    //R[i] = tmp;
 	do {
-		while( (R[j].key >= tmp.key) && (i<j) ) j--;
-		if ( i < j ) R[i++] = R[j];
-		while( ( R[i].key <= tmp.key) && (i<j) ) i++;
-		if ( i < j ) R[j--] = R[i];
+		while( R[i] < tmp )
+            ++i;
+		while( R[j] > tmp ) 
+            --j;
+        if (i < j) 
+            swap(R[i], R[j]);
+        else 
+            break;
 	}while (i != j);
-	R[i] = tmp;
-	return i;
+	swap(tmp, R[i]);
+    
+    cout << "sort data: " << endl;
+    for( int m = l; m < h; ++ m )
+    {
+        cout << R[m] << "\t";
+    }
+    cout << endl;
+	
+    return i;
 }
 
 template <typename Comparable>
