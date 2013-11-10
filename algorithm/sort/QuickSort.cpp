@@ -113,7 +113,7 @@ int PARTITION( vector<Comparable> & R, int l, int h )
 	swap(tmp, R[i]);
     
     cout << "sort data: " << endl;
-    for( int m = l; m < h; ++ m )
+    for( int m = l; m <= h; ++ m )
     {
         cout << R[m] << "\t";
     }
