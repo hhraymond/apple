@@ -4,9 +4,12 @@
 /// Created: 2013-10-25
 
 #include <stdio.h>
+#include <stdlib.h>
+//#include <math.h>
 
 static int gEightQueen[8] = {0};  
-static int gCount = 0;  
+static int gCount = 0;
+int gTest = 0;
   
 void print()  
 {  
@@ -36,14 +39,14 @@ int check_pos_valid(int row, int col)
     for(index = 0; index < row; index ++){  
         data = gEightQueen[index];  
   
-        if(col == data)  
+        if(col == data || abs(index - row) == abs(col - data) )  
             return false;  
   
-        if((index + data) == (row + col))  
-            return false;  
+        //if((index + data) == (row + col))  
+        //    return false;  
   
-        if((index - data) == (row - col))  
-            return false;  
+        //if((index - data) == (row - col))  
+        //    return false;  
     }  
   
     return true;
@@ -58,13 +61,16 @@ void eight_queen(int row)
             gEightQueen[row] = col;  
   
             if(7 == row){  
-                gCount ++, print();  
+                gCount ++;
+                print();  
                 gEightQueen[row] = 0;  
                 return;  
             }  
               
             eight_queen(row + 1);  
-            gEightQueen[row] = 0;  
+            gEightQueen[row] = 0;
+            //print();
+            //printf("xx%dxx.\n", gTest++);
         }  
     }  
 }

@@ -17,7 +17,8 @@ void data_prepare( std::vector<int> & data )
 {
     //int integer[] = {10,9, 15, 14, 4, 2, 8, 20};
     //int integer[] = {10,9, 15, 14, 4, 2, 8, 20, 11, 43, 29, 7, 20, 28, 38, 39};
-    int integer[] = {10,9, 15, 14, 4, 2, 8, 20, 11, 43, 29, 7};
+    //int integer[] = {10,9, 15, 14, 4, 2, 8, 20, 11, 43, 29, 7, 10 , 41, 10};
+    int integer[] = {10, 10, 10 , 10 , 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
 
     int count = sizeof(integer) / sizeof(int);
     std::cout << "data count: " << count << "\tinit as: " << std::endl;

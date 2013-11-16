@@ -8,9 +8,24 @@
 #include <algorithm>    // std::find
 #include <vector>       // std::vector
 
+struct buddy
+{
+    int a[1];
+    int b;
+};
+
 int main () {
   int myints[] = { 10, 20, 30 ,40 };
   int * p;
+
+  buddy bud[3];
+  buddy *self = bud;
+  (bud[0]).a[0] = 10;
+  (bud[1]).a[0] = 22;
+  (bud[2]).a[0] = 12;
+  std::cout << self->a[0] << std::endl;
+  std::cout << self->a[1] << std::endl;
+  std::cout << self->a[2] << std::endl;
 
   // pointer to array element:
   p = std::find (myints,myints+4,30);

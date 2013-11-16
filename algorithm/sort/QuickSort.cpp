@@ -76,6 +76,13 @@ void QuickSort( std::vector<Comparable> & a, int left, int right )
         }
 
         swap( a[ i ], a[ right - 1 ] );  // Restore pivot
+        // dump data
+        cout << "sort data: " << endl;
+        for( int m = left; m <= right; ++m )
+        {
+            cout << a[m] << "\t";
+        }
+        cout << endl;
 
         QuickSort( a, left, i - 1 );     // Sort small elements
         QuickSort( a, i + 1, right );    // Sort large elements
@@ -93,32 +100,41 @@ int PARTITION( vector<Comparable> & R, int l, int h )
     int i, j;
     i = l; j = h;
 	Comparable tmp = R[i];
+    do {
+        while( R[j] >= tmp && i<j ) j--;
+        if ( i < j ) R[i++] = R[j];
+        while( R[i] <= tmp && i<j ) i++;
+        if ( i < j ) R[j--] = R[i];
+    }while (i != j);
+    R[i] = tmp;
     //do {
-    //    while( (R[j] >= tmp) && (i<j) ) j--;
-    //    if ( i < j ) R[i++] = R[j];
-    //    while( ( R[i] <= tmp) && (i<j) ) i++;
-    //    if ( i < j ) R[j--] = R[i];
-    //}while (i != j);
-    //R[i] = tmp;
-	do {
-		while( R[i] < tmp )
-            ++i;
-		while( R[j] > tmp ) 
-            --j;
-        if (i < j) 
-            swap(R[i], R[j]);
-        else 
-            break;
-	}while (i != j);
-	swap(tmp, R[i]);
-    
+    //    // dump data
+    //    cout << "sort data: " << endl;
+    //    for( int m = l; m <= h; ++ m )
+    //    {
+    //        cout << R[m] << "\t";
+    //    }
+    //    cout << endl;
+	//	
+    //    // sort logic
+    //    while( R[i] <= tmp && i <= j )
+    //        ++i;
+	//	while( R[j] >= tmp && i <= j ) 
+    //        --j;
+    //    if (i < j) 
+    //        swap(R[i], R[j]);
+    //    else 
+    //        break;
+	//}while (i != j);
+	//swap(tmp, R[i]);
+	
+    // dump data
     cout << "sort data: " << endl;
     for( int m = l; m <= h; ++ m )
     {
         cout << R[m] << "\t";
     }
     cout << endl;
-	
     return i;
 }
 
