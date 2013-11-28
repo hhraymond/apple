@@ -13,16 +13,13 @@ int gTest = 0;
   
 void print()  
 {  
-    int row;  
-    int col;  
-  
-    for(row = 0; row <8; row ++){  
-        for(col = 0; col < gEightQueen[row]; col ++)  
+    for(int row = 0; row <8; row ++){  
+        for(int col = 0; col < gEightQueen[row]; col ++)  
             printf("* ");  
   
         printf("# ");  
   
-        for(col = gEightQueen[row] + 1; col < 8; col ++)  
+        for(int col = gEightQueen[row] + 1; col < 8; col ++)  
             printf("* ");  
   
         printf("\n");  
@@ -33,19 +30,17 @@ void print()
 
 int check_pos_valid(int row, int col)  
 {  
-    int index;  
     int data;  
-  
-    for(index = 0; index < row; index ++){  
-        data = gEightQueen[index];  
-  
-        if(col == data || abs(index - row) == abs(col - data) )  
+    for(int i = 0; i < row; i++){  
+        data = gEightQueen[i];  
+        // same column    // square: length == width 
+        if(col == data || abs(i - row) == abs(col - data) )  
             return false;  
   
-        //if((index + data) == (row + col))  
+        //if((i + data) == (row + col))  
         //    return false;  
   
-        //if((index - data) == (row - col))  
+        //if((i - data) == (row - col))  
         //    return false;  
     }  
   
@@ -54,27 +49,24 @@ int check_pos_valid(int row, int col)
 
 void eight_queen(int row)  
 {  
-    int col;  
-  
-    for(col = 0; col < 8; col++){  
+    for(int col = 0; col < 8; col++){  
         if(check_pos_valid(row, col)){  
             gEightQueen[row] = col;  
   
             if(7 == row){  
                 gCount ++;
                 print();  
-                gEightQueen[row] = 0;  
+                //gEightQueen[row] = 0;  
                 return;  
             }  
               
             eight_queen(row + 1);  
-            gEightQueen[row] = 0;
+            //gEightQueen[row] = 0;
             //print();
             //printf("xx%dxx.\n", gTest++);
         }  
     }  
 }
-
 
 int main(int argc, char *argv[])
 {
