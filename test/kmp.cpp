@@ -1,6 +1,6 @@
 /// kmp.cpp: 
-/// CopyRight (c) 2013 Vobile Inc.  All Rights Reserved.
-/// Author: Allen  <huang_zhen@vobile.cn>
+/// CopyRight (c) 2013 xxx Inc.  All Rights Reserved.
+/// Author: Allen  <huang_zhen@xxx.cn>
 /// Created: 2013-11-10
 
 #include <string>

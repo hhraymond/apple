@@ -1,6 +1,6 @@
 /// main.cpp:
-/// CopyRight (c) 2012 Vobile Inc.  All Rights Reserved.
-/// Author: Allen  <huang_zhen@vobile.cn>
+/// CopyRight (c) 2012 xxx Inc.  All Rights Reserved.
+/// Author: Allen  <huang_zhen@xxx.cn>
 /// Created: 2012-11-22
 
 #include"InsertionSort.hpp"

@@ -1,6 +1,6 @@
 /// 8_queen.cpp: 
 /// CopyRight (c) 2013 xxx Inc.  All Rights Reserved.
-/// Author: Allen  <huang_zhen@vobile.cn>
+/// Author: Allen  <huang_zhen@xxx.cn>
 /// Created: 2013-10-25
 
 #include <stdio.h>
